@@ -24,3 +24,7 @@ def upload_file():
         zip_path = create_eda_zip(tree, unique_name)
         return send_file(zip_path, as_attachment=True)
     return render_template('index.html')
+    if __name__ == "__main__":
+    import os
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
